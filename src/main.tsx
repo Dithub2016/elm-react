@@ -1,9 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import Seller from './components/seller/seller';
 
-require('./main.sass')
+require('./sass/reset.sass')
 
 ReactDOM.render(
-    <h1>Hello World</h1>,
+    <Seller />,
     document.getElementById('app')
 )

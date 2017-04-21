@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.sass$/,
-        loader: 'style-loader!css-loader?module!sass-loader'
+        loader: 'style-loader!css-loader?modules&localIdentName=[local]-[hash:base64:5]!sass-loader'
       }
     ]
   },
@@ -34,7 +34,11 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  resolve: {
+      // Add '.ts' and '.tsx' as resolvable extensions.
+      extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {

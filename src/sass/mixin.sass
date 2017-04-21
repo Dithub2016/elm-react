@@ -1,0 +1,105 @@
+@mixin prefixer($prop, $val, $prefixes: webkit)
+    @each $prefix in $prefixes 
+        @if $prefix == webkit
+            -webkit-#{$prop}: $val
+        @else if $prefix == moz
+            -moz-#{$prop}: $val
+        @else if $prefix == ms
+            -ms-#{$prop}: $val
+        @else if $prefix == o
+            -o-#{$prop}: $val
+    #{$prop}: $val
+
+@mixin prefixer-val($prop, $val, $prefixes: webkit)
+    @each $prefix in $prefixes 
+        @if $prefix == webkit
+            #{$prop}: -webkit-#{$val}
+        @else if $prefix == moz
+            #{$prop}: -moz-#{$val}
+        @else if $prefix == ms
+            #{$prop}: -ms-#{$val}
+        @else if $prefix == o
+            #{$prop}: -o-#{$val}
+    #{$prop}: $val
+
+
+// 盒子模型
+%border-box
+    @include prefixer(box-sizing, border-box)
+@mixin border-box
+    @extend %border-box
+
+// 背景
+$bgImgPrefix: '../../assets/'
+
+@mixin bgImg($src, $suffix: '.png')
+    background-image: url(#{$bgImgPrefix}#{$src}#{$suffix})
+@mixin bgSize($arg)
+    @include prefixer(background-size, $arg)
+
+// 滤镜
+@mixin filter($arg)
+    @include prefixer(filter, $arg)
+
+// 平移
+@mixin transform($arg)
+    @include prefixer(transform, $arg)
+
+// radius
+@mixin border-radius($arg)
+    @include prefixer(border-radius, $arg)
+
+// flex
+%flex-box
+    @include prefixer-val(display, flex)
+@mixin flex-box
+    @extend %flex-box
+@mixin flex($arg)
+    @include prefixer(flex, $arg)
+@mixin justify-content($arg)
+    @include prefixer(justify-content, $arg)
+@mixin align-items($arg)
+    @include prefixer(align-items, $arg)
+
+
+// 居中
+@mixin block-center($dire: row)
+    @if $dire == row
+        margin-left: auto
+        margin-right: auto
+    @else if $dire == column
+        margin-top: auto
+        margin-bottom: auto
+
+@mixin absolute-center($dire: row)
+    position: absolute
+    @if $dire == row
+        left: 0
+        right: 0
+        @include block-center(row)
+    @else if $dire == column
+        top: 0
+        bottom: 0
+        @include block-center(column)
+    @content
+
+
+// 单行超出省略号
+%ellipsis
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+@mixin ellipsis
+    @extend %ellipsis
+
+
+// arrow
+@mixin arrow
+    &:before
+        content: ''
+        display: block
+        width: 7px
+        height: 11px
+        @include bgImg('right-arrow')
+        @include absolute-center(column)
+            @content
