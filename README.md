@@ -1,10 +1,14 @@
-# webpack-simple
+# elm-react
 
-> A Vue.js project
+> 实现elm的单个商家页面
+
+# 技术栈
+
+> react, react-router, typescript
 
 ## Build Setup
 
-``` bash
+```sh
 # install dependencies
 npm install
 
@@ -14,5 +18,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
