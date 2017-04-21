@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
+
 const css = require('./header.sass');
 
 export default class Header extends React.Component<any, any> {
@@ -20,7 +21,7 @@ export default class Header extends React.Component<any, any> {
                         </h1>
                         <p className={css.seller_express}>
                             <span>蜂鸟专送</span>
-                            <span>/</span>
+                            <span> / </span>
                             <span>38分钟送达</span>
                         </p>
                         <p className={css.seller_coupon}>
