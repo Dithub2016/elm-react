@@ -1,0 +1,29 @@
+@import "../../sass/app"
+.wrap
+    @include flex-box
+
+.nav
+    width: 160px
+    > li
+        height: 160px
+        padding-left: 23px
+        //@include border-box
+        @include flex(none)
+        @include flex-box
+        @include align-items(center)
+        font-size: $sizeSecond
+        background-color: #f3f5f7
+
+.goods_list
+    @include flex(1)
+
+.goods_header
+    background-color: #f3f5f7
+    line-height: 52px
+    font-size: $sizeSecond
+    padding-left: 29px
+    @include border-box
+
+.goods_content
+    padding: 36px 0 36px 36px
+    @include border-box
