@@ -56,6 +56,8 @@ $bgImgPrefix: '../../assets/'
     @extend %flex-box
 @mixin flex($arg)
     @include prefixer(flex, $arg)
+@mixin flex-direction($arg)
+    @include prefixer(flex-direction, $arg)
 @mixin justify-content($arg)
     @include prefixer(justify-content, $arg)
 @mixin align-items($arg)

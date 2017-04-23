@@ -17,7 +17,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "react-swiper": "^0.1.5"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.1.2",

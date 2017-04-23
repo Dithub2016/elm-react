@@ -24,7 +24,11 @@ module.exports = {
       {
         test: /\.sass$/,
         loader: 'style-loader!css-loader?modules&localIdentName=[local]-[hash:base64:5]!sass-loader'
-      }
+      },
+        {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
+        }
     ]
   },
   devServer: {

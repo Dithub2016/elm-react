@@ -15,8 +15,8 @@ export default class Seller extends React.Component<any, any> {
     render () {
         return (
             <BrowserRouter>
-                <div>
-                    <Header/>
+                <div className={css.wrap}>
+                    <Header className={css.header} />
                     <ul className={css.nav}>
                         <li><Link to="/">商品</Link></li>
                         <li><Link to="/evaluate">评价</Link></li>

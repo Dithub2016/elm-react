@@ -2,6 +2,7 @@
 .nav
     height: 82px
     @include flex-box
+    @include flex(none)
     li
         @include flex(1)
         text-align: center
@@ -11,3 +12,12 @@
         text-decoration: none
         line-height: 82px
         display: block
+
+.wrap
+    @include flex-box
+    @include flex-direction(column)
+    height: 100vh
+    overflow: hidden
+
+.header
+    @include flex(none)

@@ -1,13 +1,13 @@
 @import "../../sass/app"
 .wrap
     @include flex-box
+    overflow: hidden
 
 .nav
     width: 160px
     > li
         height: 160px
         padding-left: 23px
-        //@include border-box
         @include flex(none)
         @include flex-box
         @include align-items(center)
@@ -25,5 +25,61 @@
     @include border-box
 
 .goods_content
-    padding: 36px 0 36px 36px
     @include border-box
+    li:not(:last-child)
+        border-bottom: 1px solid gray
+
+.good_detail
+    padding: 36px 40px 36px 36px
+    @include border-box
+    @include flex-box
+    @include flex(1)
+
+.good_info
+    font-size: 20px
+    color: rgb(147, 153, 159)
+    @include flex(1)
+    h1
+        font-size: 28px
+        color: black
+        margin-bottom: 16px
+
+.good_pic
+    width: 114px
+    height: 114px
+    @include flex(none)
+    margin-right: 20px
+    img
+        width: 100%
+
+.good_sales
+    span
+        margin-right: 23px
+    margin-bottom: 16px
+
+.good_price
+    color: #f01414
+    font-size: 28px
+    margin-right: 16px
+    i
+        font-size: 20px
+
+.good_species
+    margin-bottom: 16px
+
+.btn
+    @include flex-box
+
+.add
+    width: 40px
+    height: 40px
+    background-color: #00a0dc
+    @include border-radius(50%)
+    color: $white
+    font-size: 40px
+    text-align: center
+
+.good_footer
+    @include flex-box
+    @include justify-content(space-between)
+    @include align-items(center)
