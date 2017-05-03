@@ -9,9 +9,7 @@ import Business from '../business/business'
 const css = require('./seller.sass');
 
 export default class Seller extends React.Component<any, any> {
-    componentDidMount () {
-        console.log(`I'm coming`);
-    }
+
     render () {
         return (
             <BrowserRouter>

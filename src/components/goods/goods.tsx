@@ -32,13 +32,15 @@ const goodList = (item: any[]) => {
 };
 let scrollRefs: any = [];
 interface JsonData  {
-    jsonData: any
+    jsonData: any,
+    currentRating: number
 }
 export default class Goods extends React.Component<any, any> {
     scrollLeft: any;
     scrollRight: any;
     state: JsonData = {
-        jsonData: null
+        jsonData: null,
+        currentRating: 0
     };
     componentWillMount () {
         fetch('http://localhost:8080/data.json')
@@ -56,11 +58,16 @@ export default class Goods extends React.Component<any, any> {
             });
     }
     scrollHandle (index: number) {
-        this.scrollRight.scrollToElement(this.refs[scrollRefs[index]]);
+        this.setState({
+            currentRating: index
+        });
+        this.scrollRight.scrollToElement(this.refs[scrollRefs[index]], 750);
     }
     render () {
         const Rating = this.state.jsonData && this.state.jsonData.goods.map((item: any, index: number) => {
-            return <li onClick={this.scrollHandle.bind(this, index)}>{item.name}</li>
+            return <li onClick={this.scrollHandle.bind(this, index)} style={
+                this.state.currentRating === index ? {background: '#fff'} : null
+            }>{item.name}</li>
         });
         const RatingHeader = this.state.jsonData && this.state.jsonData.goods.map((item: any, index: number) => {
             scrollRefs.push('scrollRefs' + index);
